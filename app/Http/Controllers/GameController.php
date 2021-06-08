@@ -14,7 +14,11 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $games = Game::all();
+        return response()->json([
+            'data' => $games,
+            'success' => true,
+        ]);
     }
 
     /**
@@ -35,7 +39,11 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        return response()->json([
+            'message' => 'Game saved corretly',
+            'success' => true,
+        ]);
     }
 
     /**
